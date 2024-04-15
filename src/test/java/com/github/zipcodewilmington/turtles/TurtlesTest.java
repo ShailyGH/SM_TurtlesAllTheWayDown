@@ -3,6 +3,10 @@ package com.github.zipcodewilmington.turtles;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.Duration;
+import java.time.Instant;
+import java.util.Random;
+
 import static org.junit.Assert.*;
 
 /**
@@ -101,4 +105,27 @@ public class TurtlesTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void timeGCD()
+    {
+        int result1, result2;
+        Random rand = new Random(System.currentTimeMillis());
+
+        // gcd time test
+        Instant start_time_gcd = Instant.now();
+        result1 = Turtles.gcd(rand.nextInt(Integer.MAX_VALUE), rand.nextInt(Integer.MAX_VALUE));
+        Instant end_time_gcd = Instant.now();
+        long timeElapsed_gcd = Duration.between(start_time_gcd, end_time_gcd).toMillis();
+
+        // gcd2 time test
+        Instant start_time_gcd2 = Instant.now();
+        result2 = Turtles.gcd2(rand.nextInt(Integer.MAX_VALUE), rand.nextInt(Integer.MAX_VALUE));
+        Instant end_time_gcd2 = Instant.now();
+        long timeElapsed_gcd2 = Duration.between(start_time_gcd2, end_time_gcd2).toMillis();
+
+        Assert.assertEquals(result1, result2);
+
+        System.out.println("GCD timing - " + timeElapsed_gcd + "ms");
+        System.out.println("GCD2 timing - " + timeElapsed_gcd2 + "ms");
+    }
 }
