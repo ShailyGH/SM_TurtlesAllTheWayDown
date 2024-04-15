@@ -17,4 +17,14 @@ public class Turtles {
         throw new IllegalArgumentException("Please provide a positive number !!!");
     }
 
+    public static int gcd(int firstNumber, int secondNumber)
+    {
+        if(secondNumber != 0)
+        {
+            return gcd(secondNumber, firstNumber % secondNumber);
+        }
+        return firstNumber;
+    }
+
+
 }
