@@ -71,4 +71,34 @@ public class TurtlesTest {
         Assert.assertEquals(expectedResult, actualResult);
     }
 
+    @Test
+    public void testGCD2_1()
+    {
+        int expectedResult = 34;
+
+        int actualResult = Turtles.gcd2(102, 68);
+
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void testGCD2_2()
+    {
+        int expectedResult = 24;
+
+        int actualResult = Turtles.gcd2(1440, 408);
+
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
+    @Test
+    public void testGCD2_3()
+    {
+        int expectedResult = 1440;
+
+        int actualResult = Turtles.gcd2(1440, 0);
+
+        Assert.assertEquals(expectedResult, actualResult);
+    }
+
 }

@@ -26,5 +26,16 @@ public class Turtles {
         return firstNumber;
     }
 
+    public static int gcd2(int firstNumber, int secondNumber)
+    {
+        int temp = 0;
+        while(secondNumber != 0)
+        {
+            temp = secondNumber;
+            secondNumber = firstNumber % secondNumber;
+            firstNumber = temp;
+        }
+        return firstNumber;
+    }
 
 }
